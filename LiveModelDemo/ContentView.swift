@@ -5,62 +5,73 @@
 //  Created by Pat Nakajima on 5/5/24.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
+
+// The model
+@Model final class Person {
+	@Attribute(.unique) var name: String
+	var friendCount: Int = 0
+
+	init(name: String) {
+		self.name = name
+	}
+}
+
+// Our view that needs to stay up to date
+struct PersonView: View {
+	// If you remove @LiveModel, the friend count won't be updated by the "Add random friend" button
+	@LiveModel var person: Person
+
+	var body: some View {
+		HStack {
+			Text(person.name)
+			Text("\(person.friendCount) friend\(person.friendCount == 1 ? "" : "s")")
+		}
+	}
+}
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+	@Query var people: [Person]
+	@Environment(\.modelContext) var modelContext
 
-    var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
+	var body: some View {
+		List {
+			Section {
+				ForEach(people, id: \.name) { person in
+					PersonView(person: person)
+				}
+			}
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
+			// Tapping this button should update the PersonViews in the list above
+			Button("Add a random friend") {
+				// Get some Sendable things we can use in the Task below
+				let container = modelContext.container
+				let personID = people.randomElement()!.id
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
+				Task {
+					// Use a background task to update the person's friendCount
+					let context = ModelContext(container)
+					let person = context.model(for: personID) as! Person
+					person.friendCount += 1
+					try! context.save()
+				}
+			}
+		}
+		.onAppear {
+			// Get us some sample data
+			if people.isEmpty {
+				for name in ["Frasier", "Niles", "Daphne", "Martin", "Eddy"] {
+					let person = Person(name: name)
+					modelContext.insert(person)
+					try! modelContext.save()
+				}
+			}
+		}
+	}
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+	ContentView()
+		.modelContainer(for: Person.self, inMemory: true)
 }

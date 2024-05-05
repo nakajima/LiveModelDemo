@@ -1,0 +1,15 @@
+{
+  "originHash" : "d8d6b82c82b237f9a1c144ff79d947e076af98b2c550776ff38c01fe60eda5b3",
+  "pins" : [
+    {
+      "identity" : "swiftdatakit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fatbobman/SwiftDataKit",
+      "state" : {
+        "revision" : "136c34b711f5e8eccf1d11aeca8e0a14958f7b84",
+        "version" : "0.1.3"
+      }
+    }
+  ],
+  "version" : 3
+}

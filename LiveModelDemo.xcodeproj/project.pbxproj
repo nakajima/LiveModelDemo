@@ -12,6 +12,8 @@
 		A62BFABD2BE820260035F92F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62BFABC2BE820260035F92F /* Item.swift */; };
 		A62BFABF2BE820270035F92F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62BFABE2BE820270035F92F /* Assets.xcassets */; };
 		A62BFAC32BE820270035F92F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62BFAC22BE820270035F92F /* Preview Assets.xcassets */; };
+		A62BFACB2BE820410035F92F /* SwiftDataKit in Frameworks */ = {isa = PBXBuildFile; productRef = A62BFACA2BE820410035F92F /* SwiftDataKit */; };
+		A62BFACD2BE8208D0035F92F /* LiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62BFACC2BE8208D0035F92F /* LiveModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		A62BFABE2BE820270035F92F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A62BFAC02BE820270035F92F /* LiveModelDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiveModelDemo.entitlements; sourceTree = "<group>"; };
 		A62BFAC22BE820270035F92F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A62BFACC2BE8208D0035F92F /* LiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62BFACB2BE820410035F92F /* SwiftDataKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +64,7 @@
 				A62BFABE2BE820270035F92F /* Assets.xcassets */,
 				A62BFAC02BE820270035F92F /* LiveModelDemo.entitlements */,
 				A62BFAC12BE820270035F92F /* Preview Content */,
+				A62BFACC2BE8208D0035F92F /* LiveModel.swift */,
 			);
 			path = LiveModelDemo;
 			sourceTree = "<group>";
@@ -88,6 +93,9 @@
 			dependencies = (
 			);
 			name = LiveModelDemo;
+			packageProductDependencies = (
+				A62BFACA2BE820410035F92F /* SwiftDataKit */,
+			);
 			productName = LiveModelDemo;
 			productReference = A62BFAB52BE820260035F92F /* LiveModelDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -116,6 +124,9 @@
 				Base,
 			);
 			mainGroup = A62BFAAC2BE820260035F92F;
+			packageReferences = (
+				A62BFAC92BE820410035F92F /* XCRemoteSwiftPackageReference "SwiftDataKit" */,
+			);
 			productRefGroup = A62BFAB62BE820260035F92F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A62BFABB2BE820260035F92F /* ContentView.swift in Sources */,
+				A62BFACD2BE8208D0035F92F /* LiveModel.swift in Sources */,
 				A62BFABD2BE820260035F92F /* Item.swift in Sources */,
 				A62BFAB92BE820260035F92F /* LiveModelDemoApp.swift in Sources */,
 			);
@@ -363,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A62BFAC92BE820410035F92F /* XCRemoteSwiftPackageReference "SwiftDataKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fatbobman/SwiftDataKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A62BFACA2BE820410035F92F /* SwiftDataKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A62BFAC92BE820410035F92F /* XCRemoteSwiftPackageReference "SwiftDataKit" */;
+			productName = SwiftDataKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A62BFAAD2BE820260035F92F /* Project object */;
 }
