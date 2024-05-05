@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A62BFAB92BE820260035F92F /* LiveModelDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62BFAB82BE820260035F92F /* LiveModelDemoApp.swift */; };
 		A62BFABB2BE820260035F92F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62BFABA2BE820260035F92F /* ContentView.swift */; };
-		A62BFABD2BE820260035F92F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62BFABC2BE820260035F92F /* Item.swift */; };
 		A62BFABF2BE820270035F92F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62BFABE2BE820270035F92F /* Assets.xcassets */; };
 		A62BFAC32BE820270035F92F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62BFAC22BE820270035F92F /* Preview Assets.xcassets */; };
 		A62BFACB2BE820410035F92F /* SwiftDataKit in Frameworks */ = {isa = PBXBuildFile; productRef = A62BFACA2BE820410035F92F /* SwiftDataKit */; };
@@ -20,7 +19,6 @@
 		A62BFAB52BE820260035F92F /* LiveModelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveModelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62BFAB82BE820260035F92F /* LiveModelDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveModelDemoApp.swift; sourceTree = "<group>"; };
 		A62BFABA2BE820260035F92F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A62BFABC2BE820260035F92F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A62BFABE2BE820270035F92F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A62BFAC02BE820270035F92F /* LiveModelDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiveModelDemo.entitlements; sourceTree = "<group>"; };
 		A62BFAC22BE820270035F92F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 			children = (
 				A62BFAB82BE820260035F92F /* LiveModelDemoApp.swift */,
 				A62BFABA2BE820260035F92F /* ContentView.swift */,
-				A62BFABC2BE820260035F92F /* Item.swift */,
 				A62BFABE2BE820270035F92F /* Assets.xcassets */,
 				A62BFAC02BE820270035F92F /* LiveModelDemo.entitlements */,
 				A62BFAC12BE820270035F92F /* Preview Content */,
@@ -155,7 +152,6 @@
 			files = (
 				A62BFABB2BE820260035F92F /* ContentView.swift in Sources */,
 				A62BFACD2BE8208D0035F92F /* LiveModel.swift in Sources */,
-				A62BFABD2BE820260035F92F /* Item.swift in Sources */,
 				A62BFAB92BE820260035F92F /* LiveModelDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
